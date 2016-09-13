@@ -14,7 +14,7 @@ use Drupal\Component\Utility\UrlHelper;
 class TutorialTwoForm extends FormBase
 {
   
-  private $tutorialOneForm;
+  private $tutorialTwoForm;
 
   public function getFormId()
   {
@@ -23,17 +23,17 @@ class TutorialTwoForm extends FormBase
 
   public function buildForm(array $form, FormStateInterface $form_state)
   {
-    $this->tutorialOneForm = \Drupal::formBuilder()->getForm('Drupal\d8training_form\Form\TutorialOneForm');
-    $this->tutorialOneForm['#attributes']['class'][0] = 'd8training_forms_tutorialtwo_form';
-    $this->extendForm($this->tutorialOneForm);
+    $this->tutorialTwoForm = \Drupal::formBuilder()->getForm('Drupal\d8training_form\Form\TutorialOneForm');
+    $this->tutorialTwoForm['#attributes']['class'][0] = 'd8training_forms_tutorialtwo_form';
+    $this->extendForm($this->tutorialTwoForm);
 
-    return $this->tutorialOneForm;
+    return $this->tutorialTwoForm;
   }
 
   public function validateForm(array &$form, FormStateInterface $form_state)
   {
     if (!UrlHelper::isValid($form_state->getValue('video'), TRUE)) {
-      //$form_state->setErrorByName('video', $this->t("The video url '%url' is invalid.", array('%url' => $form_state->getValue('video'))));
+      $form_state->setErrorByName('video', $this->t("The video url '%url' is invalid.", array('%url' => $form_state->getValue('video'))));
     }
   }
 
