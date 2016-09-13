@@ -32,9 +32,9 @@ class TutorialTwoForm extends FormBase
 
   public function validateForm(array &$form, FormStateInterface $form_state)
   {
-    //if (!UrlHelper::isValid($form_state->getValue('video'), TRUE)) {
+    if (!UrlHelper::isValid($form_state->getValue('video'), TRUE)) {
       //$form_state->setErrorByName('video', $this->t("The video url '%url' is invalid.", array('%url' => $form_state->getValue('video'))));
-    //}
+    }
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state)
@@ -44,6 +44,8 @@ class TutorialTwoForm extends FormBase
     }
   }
 
+  // Alters the form.
+  // TODO: Change the order of the field.
   private function extendForm(array &$form)
   {
     $form['tutorial'] = array(
@@ -51,7 +53,7 @@ class TutorialTwoForm extends FormBase
       '#title' => t('Tutorial2'),
       '#required' => TRUE,
     );
-    
+
   }
 
 }
