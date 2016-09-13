@@ -1,0 +1,5 @@
+name: D8Training Forms
+type: module
+description: 'Training Drupal 8 Forms.'
+package: D8Training
+core: 8.x

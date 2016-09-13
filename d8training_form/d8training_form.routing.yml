@@ -1,0 +1,14 @@
+d8training_form:
+  path: 'd8training-form/tutorialone'
+  defaults:
+    _form: '\Drupal\d8training_form\Form\TutorialOneForm'
+    _title: 'Tutorial One'
+  requirements:
+    _permission: 'access content'
+d8training_form2:
+  path: 'd8training-form/tutorialtwo'
+  defaults:
+    _form: '\Drupal\d8training_form\Form\TutorialTwoForm'
+    _title: 'Tutorial Two'
+  requirements:
+    _permission: 'access content'
